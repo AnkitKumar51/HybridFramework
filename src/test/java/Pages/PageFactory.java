@@ -6,6 +6,7 @@ public class PageFactory {
     WebDriver driver;
     private LoginPage loginPage;
     private LogOutPage logOutPage;
+    private LogisticWareHouseInventoryManagementPage logisticWareHouseInventoryManagementPage;
 
     public PageFactory(WebDriver driver) {
         this.driver = driver;
@@ -24,5 +25,12 @@ public class PageFactory {
             logOutPage = new LogOutPage(driver);
         }
         return logOutPage;
+    }
+
+    public LogisticWareHouseInventoryManagementPage getLogisticWareHouseInventoryManagementPage(){
+        if(logisticWareHouseInventoryManagementPage == null){
+            logisticWareHouseInventoryManagementPage = new LogisticWareHouseInventoryManagementPage(driver);
+        }
+        return logisticWareHouseInventoryManagementPage;
     }
 }

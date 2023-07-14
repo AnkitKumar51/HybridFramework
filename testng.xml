@@ -11,4 +11,11 @@
         </classes>
     </test>
 
+    <test name="TealPD Logistics Tests">
+        <parameter name="browserName" value="chrome"/>
+        <classes>
+            <class name="Tests.TC02_LogisticWareHouseInventoryManagementPage"/>
+        </classes>
+    </test>
+
 </suite>
