@@ -1,0 +1,14 @@
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="All Tests Suite">
+    <listeners>
+        <listener class-name="Configuration.Listeners"/>
+    </listeners>
+
+    <test name="TealPD Login Logout Tests">
+        <parameter name="browserName" value="chrome"/>
+        <classes>
+            <class name="Tests.TC01_LoginPage"/>
+        </classes>
+    </test>
+
+</suite>
