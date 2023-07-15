@@ -60,7 +60,7 @@ public class baseClass {
     }
 
     @DataProvider(name = "WebsiteLoginData")
-    public Object[][] passData() throws IOException {
+    public Object[][] LoginPageData() throws IOException {
         String excelSheetPath = System.getProperty("user.dir");
         ExcelDataConfig config = new ExcelDataConfig(excelSheetPath + "//TestData//tealPDTestData.xlsx");
         int rows = config.getRowCount(0);
@@ -75,7 +75,7 @@ public class baseClass {
     }
 
     @DataProvider(name = "AddContactsData")
-    public Object[][] checkBoxData() throws IOException {
+    public Object[][] ContactsPageData() throws IOException {
         String excelSheetPath = System.getProperty("user.dir");
         ExcelDataConfig config = new ExcelDataConfig(excelSheetPath + "//TestData//tealPDTestData.xlsx");
         int rows = config.getRowCount(1);

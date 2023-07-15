@@ -1,5 +1,5 @@
 <!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
-<suite name="All Tests Suite">
+<suite name="All Tests Suite" parallel="tests" thread-count="1">
     <listeners>
         <listener class-name="Configuration.Listeners"/>
     </listeners>
@@ -12,7 +12,7 @@
     </test>
 
     <test name="TealPD Logistics Tests">
-        <parameter name="browserName" value="chrome"/>
+        <parameter name="browserName" value="edge"/>
         <classes>
             <class name="Tests.TC02_LogisticWareHouseInventoryManagementPage"/>
         </classes>
