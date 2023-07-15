@@ -16,6 +16,13 @@ public class LogisticWareHouseInventoryManagementPage {
     String parentWindow;
     String childWindow;
 
+    @FindBy(xpath = "(//a[contains(text(),'Logistics')])[1]")
+    private WebElement LogisticsMenu;
+
+    @FindBy(xpath = "//a[contains(text(),'Whs Management')]")
+    private WebElement WhsManagementList;
+
+
     @FindBy(xpath = "//a[contains(text(),'Manage Whs Inventory')]")
     private WebElement manageWhsInventory;
 
@@ -40,11 +47,9 @@ public class LogisticWareHouseInventoryManagementPage {
     }
 
     public void goToLogisticSection() {
-        WebElement LogisticsMenu = driver.findElement(By.xpath("(//a[contains(text(),'Logistics')])[1]"));
         Actions actions = new Actions(driver);
         actions.moveToElement(LogisticsMenu).perform();
 
-        WebElement WhsManagementList = driver.findElement(By.xpath("//a[contains(text(),'Whs Management')]"));
         Actions ac = new Actions(driver);
         ac.moveToElement(WhsManagementList).perform();
     }

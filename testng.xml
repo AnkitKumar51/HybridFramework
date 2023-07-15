@@ -18,4 +18,17 @@
         </classes>
     </test>
 
+    <test name="TealPD Contacts Page Tests">
+        <parameter name="browserName" value="chrome"/>
+        <classes>
+            <class name="Tests.TC03_ContactsPage"/>
+        </classes>
+    </test>
+
+    <test name="TealPD Add Contacts Page Tests">
+        <parameter name="browserName" value="headlessChrome"/>
+        <classes>
+            <class name="Tests.TC04_AddContactsPage"/>
+        </classes>
+    </test>
 </suite>

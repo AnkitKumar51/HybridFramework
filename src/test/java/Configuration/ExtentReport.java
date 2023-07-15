@@ -12,7 +12,9 @@ import java.io.IOException;
 
 public final class ExtentReport {
 
-    private ExtentReport(){}
+    private ExtentReport() {
+    }
+
     private static ExtentReports extent;
     public static ExtentTest test;
     private WebDriver driver;
@@ -31,7 +33,7 @@ public final class ExtentReport {
         Desktop.getDesktop().browse(new File("target//Extent-Reports//index.html").toURI());
     }
 
-    public static void createTest(String testCaseName){
+    public static void createTest(String testCaseName) {
         test = extent.createTest(testCaseName);
     }
 }

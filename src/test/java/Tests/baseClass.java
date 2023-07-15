@@ -74,7 +74,7 @@ public class baseClass {
         return data;
     }
 
-    @DataProvider(name = "CheckBoxURL")
+    @DataProvider(name = "AddContactsData")
     public Object[][] checkBoxData() throws IOException {
         String excelSheetPath = System.getProperty("user.dir");
         ExcelDataConfig config = new ExcelDataConfig(excelSheetPath + "//TestData//tealPDTestData.xlsx");

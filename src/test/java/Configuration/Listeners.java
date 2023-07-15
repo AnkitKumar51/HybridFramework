@@ -34,16 +34,15 @@ public class Listeners extends baseClass implements ITestListener, ISuiteListene
     }
 
     @Override
-    public void onTestStart(ITestResult result){
+    public void onTestStart(ITestResult result) {
         ExtentReport.createTest(result.getMethod().getMethodName());
     }
 
     @Override
-    public void onTestSuccess(ITestResult result){
+    public void onTestSuccess(ITestResult result) {
         Object Listeners = result.getInstance();
         WebDriver webDriver = getDrivers();
-        if (webDriver != null)
-        {
+        if (webDriver != null) {
             try {
                 ExtentReport.test.pass(result.getMethod().getMethodName() + " is passed", MediaEntityBuilder.createScreenCaptureFromBase64String(getBase64Image()).build());
             } catch (IOException e) {
@@ -53,7 +52,7 @@ public class Listeners extends baseClass implements ITestListener, ISuiteListene
     }
 
     @Override
-    public void onTestFailure(ITestResult result){
+    public void onTestFailure(ITestResult result) {
         Object Listeners = result.getInstance();
         WebDriver webDriver = getDrivers();
         if (webDriver != null) {
@@ -67,15 +66,15 @@ public class Listeners extends baseClass implements ITestListener, ISuiteListene
     }
 
     @Override
-    public void onTestSkipped(ITestResult result){
-        ExtentLogger.skip(result.getMethod().getMethodName() +" is skipped");
+    public void onTestSkipped(ITestResult result) {
+        ExtentLogger.skip(result.getMethod().getMethodName() + " is skipped");
     }
 
     @Override
     public void onTestFailedButWithinSuccessPercentage(ITestResult result) {
     }
 
-    public static String getBase64Image(){
+    public static String getBase64Image() {
         return ((TakesScreenshot) getDrivers()).getScreenshotAs(OutputType.BASE64);
     }
 }
