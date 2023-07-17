@@ -12,7 +12,7 @@
     </test>
 
     <test name="TealPD Logistics Tests">
-        <parameter name="browserName" value="edge"/>
+        <parameter name="browserName" value="chrome"/>
         <classes>
             <class name="Tests.TC02_LogisticWareHouseInventoryManagementPage"/>
         </classes>
@@ -26,9 +26,16 @@
     </test>
 
     <test name="TealPD Add Contacts Page Tests">
-        <parameter name="browserName" value="headlessChrome"/>
+        <parameter name="browserName" value="chrome"/>
         <classes>
             <class name="Tests.TC04_AddContactsPage"/>
+        </classes>
+    </test>
+
+    <test name="TealPD Items Page Tests">
+        <parameter name="browserName" value="chrome"/>
+        <classes>
+            <class name="Tests.TC05_ItemsPage"/>
         </classes>
     </test>
 </suite>

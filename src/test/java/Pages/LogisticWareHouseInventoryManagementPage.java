@@ -79,6 +79,7 @@ public class LogisticWareHouseInventoryManagementPage {
         JavascriptExecutor js = (JavascriptExecutor) driver;
         js.executeScript("window.scrollTo(0, 1200);");
         clickOnPush.click();
+        driver.close();
         driver.switchTo().window(parentWindow);
     }
 }
