@@ -88,4 +88,19 @@ public class baseClass {
         }
         return data;
     }
+
+    @DataProvider(name = "QpPageData")
+    public Object[][] QpPage() throws IOException {
+        String excelSheetPath = System.getProperty("user.dir");
+        ExcelDataConfig config = new ExcelDataConfig(excelSheetPath + "//TestData//tealPDTestData.xlsx");
+        int rows = config.getRowCount(2);
+        int cols = config.getCellCount(2, 1);
+        String[][] data = new String[rows][cols];
+        for (int i = 1; i <= rows; i++) {
+            for (int j = 0; j < cols; j++) {
+                data[i - 1][j] = config.getData(2, i, j);
+            }
+        }
+        return data;
+    }
 }

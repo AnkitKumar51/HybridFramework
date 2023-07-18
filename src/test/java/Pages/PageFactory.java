@@ -10,10 +10,10 @@ public class PageFactory {
     private ContactsPage contactsPage;
     private AddContactsPage addContactsPage;
     private ItemsPage itemsPage;
+    private QpPage qpPage;
 
     public PageFactory(WebDriver driver) {
         this.driver = driver;
-
     }
 
     public LoginPage getLoginPage() {
@@ -30,31 +30,38 @@ public class PageFactory {
         return logOutPage;
     }
 
-    public LogisticWareHouseInventoryManagementPage getLogisticWareHouseInventoryManagementPage(){
-        if(logisticWareHouseInventoryManagementPage == null){
+    public LogisticWareHouseInventoryManagementPage getLogisticWareHouseInventoryManagementPage() {
+        if (logisticWareHouseInventoryManagementPage == null) {
             logisticWareHouseInventoryManagementPage = new LogisticWareHouseInventoryManagementPage(driver);
         }
         return logisticWareHouseInventoryManagementPage;
     }
 
-    public ContactsPage getContactsPage(){
-        if(contactsPage == null){
+    public ContactsPage getContactsPage() {
+        if (contactsPage == null) {
             contactsPage = new ContactsPage(driver);
         }
         return contactsPage;
     }
 
-    public AddContactsPage getAddContactsPage(){
-        if(addContactsPage == null){
+    public AddContactsPage getAddContactsPage() {
+        if (addContactsPage == null) {
             addContactsPage = new AddContactsPage(driver);
         }
         return addContactsPage;
     }
 
-    public ItemsPage getItemsPage(){
-        if(itemsPage == null){
+    public ItemsPage getItemsPage() {
+        if (itemsPage == null) {
             itemsPage = new ItemsPage(driver);
         }
         return itemsPage;
+    }
+
+    public QpPage getQpPage(){
+        if (qpPage == null){
+            qpPage = new QpPage(driver);
+        }
+        return qpPage;
     }
 }
