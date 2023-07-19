@@ -14,7 +14,7 @@ public class TC06_QpPage extends baseClass{
         pageFactory.getQpPage().addQPData(qpName,qpInstructions);
         pageFactory.getQpPage().submitQP();
         pageFactory.getQpPage().checkQpAddedOrNot(qpName);
-        pageFactory.getQpPage().tableOperation(qpName);
-        pageFactory.getQpPage().deleteQP();
+//        pageFactory.getQpPage().tableOperation(qpName);
+        pageFactory.getQpPage().deleteQP(qpName);
     }
 }

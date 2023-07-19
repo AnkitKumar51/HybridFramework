@@ -79,7 +79,7 @@ public class QpPage {
         se.selectByVisibleText(" Whistler (aka 859 Spring)");
 
         Select select = new Select(selectCategory);
-        select.selectByVisibleText("Communication");
+        select.selectByVisibleText("Component");
 
         Select sel = new Select(selectItem);
         sel.selectByVisibleText(" 1/2\" Red & White Balancing Valve Lead Free PN 9517AB");
@@ -117,77 +117,55 @@ public class QpPage {
 
     }
 
-    public boolean tableOperation(String qpName) {
+//    public void tableOperation(String qpName) {
+//
+//        WebElement link = driver.findElement(By.xpath("//a[contains(text(), '" + qpName + "')]"));
+//        link.click();
+//        QpName.clear();
+//        QpName.sendKeys(qpName);
+//        QpName.click();
+//        if (isMessageDisplayed(driver)) {
+//            // If the message is displayed, add a new name
+//            QpName.clear();
+//            QpName.sendKeys(updatedQP);
+//            Select select = new Select(selectCategory);
+//            select.selectByVisibleText("Communication");
+//            updateQP.click();
+//
+//            try {
+//                // Your test steps that may trigger an unexpected alert
+//                // ...
+//                String expectedText = "Data has been successfully submitted";
+//                // Check if an alert is present
+//                Alert alert = driver.switchTo().alert();
+//
+//                // If an alert is present, get the alert text and accept it
+//                String alertText = alert.getText();
+//                System.out.println("Alert text : " + alertText);
+//                alert.accept();
+//            } catch (NoAlertPresentException e) {
+//                // No alert is present, continue with your test flow
+//                System.out.println("No alert present.");
+//            }
+//        }
+//    }
 
+
+    public void deleteQP(String qpName) {
+
+//        goToQpSection();
+//        listQPs.click();
+//        try {
+//            Thread.sleep(3000);
+//        } catch (InterruptedException e) {
+//            throw new RuntimeException(e);
+//        }
         WebElement link = driver.findElement(By.xpath("//a[contains(text(), '" + qpName + "')]"));
-        link.click();
-        QpName.clear();
-        try {
-            Thread.sleep(3000);
-        } catch (InterruptedException e) {
-            throw new RuntimeException(e);
-        }
-        QpName.sendKeys(qpName);
-        try {
-            Thread.sleep(3000);
-        } catch (InterruptedException e) {
-            throw new RuntimeException(e);
-        }
-
-        if (isMessageDisplayed(driver)) {
-            // If the message is displayed, add a new name
-            QpName.clear();
-            QpName.sendKeys(updatedQP);
-            try {
-                Thread.sleep(3000);
-            } catch (InterruptedException e) {
-                throw new RuntimeException(e);
-            }
-            Select select = new Select(selectCategory);
-            select.selectByVisibleText("Communication");
-            updateQP.click();
-
-            try {
-                // Your test steps that may trigger an unexpected alert
-                // ...
-                String expectedText = "Data has been successfully submitted";
-                // Check if an alert is present
-                Alert alert = driver.switchTo().alert();
-
-                // If an alert is present, get the alert text and accept it
-                String alertText = alert.getText();
-                System.out.println("Alert text : " + alertText);
-//                Assert.assertEquals(alertText, expectedText, "Not Matched");
-                alert.accept();
-            } catch (NoAlertPresentException e) {
-                // No alert is present, continue with your test flow
-                System.out.println("No alert present.");
-            }
-        }
-
-        try {
-            Thread.sleep(3000);
-        } catch (InterruptedException e) {
-            throw new RuntimeException(e);
-        }
-        return false;
-    }
-
-
-    public void deleteQP() {
-        goToQpSection();
-        listQPs.click();
-        try {
-            Thread.sleep(3000);
-        } catch (InterruptedException e) {
-            throw new RuntimeException(e);
-        }
-        WebElement text = driver.findElement(By.xpath("//a[contains(text(), '" + updatedQP + "')]"));
 
         // Check if the link is found
-        if (text != null) {
+        if (link != null) {
             // Find the delete button in the same row as the link using relative XPath
-            WebElement deleteButton = text.findElement(By.xpath("./ancestor::tr//a[contains(@id, 'linkDelete')]"));
+            WebElement deleteButton = link.findElement(By.xpath("./ancestor::tr//a[contains(@id, 'linkDelete')]"));
             try {
                 Thread.sleep(3000);
             } catch (InterruptedException e) {
@@ -226,15 +204,15 @@ public class QpPage {
         }
     }
 
-    private boolean isMessageDisplayed(WebDriver driver) {
-        try {
-            // Find the message element
-            WebElement messageElement = driver.findElement(By.xpath("//*[@id=\"spnMsg\"]"));
-
-            // Check if the message is displayed
-            return messageElement.isDisplayed();
-        } catch (org.openqa.selenium.NoSuchElementException e) {
-            return false; // Message element is not found, so the message is not displayed
-        }
-    }
+//    private boolean isMessageDisplayed(WebDriver driver) {
+//        try {
+//            // Find the message element
+//            WebElement messageElement = driver.findElement(By.xpath("//*[@id=\"spnMsg\"]"));
+//
+//            // Check if the message is displayed
+//            return messageElement.isDisplayed();
+//        } catch (org.openqa.selenium.NoSuchElementException e) {
+//            return false; // Message element is not found, so the message is not displayed
+//        }
+//    }
 }

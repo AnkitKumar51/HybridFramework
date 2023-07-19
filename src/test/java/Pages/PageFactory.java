@@ -11,6 +11,7 @@ public class PageFactory {
     private AddContactsPage addContactsPage;
     private ItemsPage itemsPage;
     private QpPage qpPage;
+    private Task1 task1;
 
     public PageFactory(WebDriver driver) {
         this.driver = driver;
@@ -63,5 +64,12 @@ public class PageFactory {
             qpPage = new QpPage(driver);
         }
         return qpPage;
+    }
+
+    public Task1 getTask1(){
+        if(task1== null){
+            task1 = new Task1(driver);
+        }
+        return task1;
     }
 }

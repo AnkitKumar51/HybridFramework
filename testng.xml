@@ -40,9 +40,16 @@
     </test>
 
     <test name="TealPD QP Page Tests">
-        <parameter name="browserName" value="headlessChrome"/>
+        <parameter name="browserName" value="chrome"/>
         <classes>
             <class name="Tests.TC06_QpPage"/>
+        </classes>
+    </test>
+
+    <test name="TealPD Skid Page Tests">
+        <parameter name="browserName" value="chrome"/>
+        <classes>
+            <class name="Tests.TC07_Task1"/>
         </classes>
     </test>
 </suite>

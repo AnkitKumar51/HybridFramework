@@ -103,4 +103,20 @@ public class baseClass {
         }
         return data;
     }
+
+    @DataProvider(name = "skidData")
+    public Object[][] skidData() throws IOException {
+        String excelSheetPath = System.getProperty("user.dir");
+        ExcelDataConfig config = new ExcelDataConfig(excelSheetPath + "//TestData//tealPDTestData.xlsx");
+        int rows = config.getRowCount(3);
+        int cols = config.getCellCount(3, 1);
+        String[][] data = new String[rows][cols];
+        for (int i = 1; i <= rows; i++) {
+            for (int j = 0; j < cols; j++) {
+                data[i - 1][j] = config.getData(3, i, j);
+            }
+        }
+        return data;
+    }
+
 }
