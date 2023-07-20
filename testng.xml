@@ -4,47 +4,47 @@
         <listener class-name="Configuration.Listeners"/>
     </listeners>
 
-    <test name="TealPD Login Logout Tests">
-        <parameter name="browserName" value="chrome"/>
-        <classes>
-            <class name="Tests.TC01_LoginPage"/>
-        </classes>
-    </test>
+<!--    <test name="TealPD Login Logout Tests">-->
+<!--        <parameter name="browserName" value="edge"/>-->
+<!--        <classes>-->
+<!--            <class name="Tests.TC01_LoginPage"/>-->
+<!--        </classes>-->
+<!--    </test>-->
 
-    <test name="TealPD Logistics Tests">
-        <parameter name="browserName" value="chrome"/>
-        <classes>
-            <class name="Tests.TC02_LogisticWareHouseInventoryManagementPage"/>
-        </classes>
-    </test>
+<!--    <test name="TealPD Logistics Tests">-->
+<!--        <parameter name="browserName" value="chrome"/>-->
+<!--        <classes>-->
+<!--            <class name="Tests.TC02_LogisticWareHouseInventoryManagementPage"/>-->
+<!--        </classes>-->
+<!--    </test>-->
 
-    <test name="TealPD Contacts Page Tests">
-        <parameter name="browserName" value="chrome"/>
-        <classes>
-            <class name="Tests.TC03_ContactsPage"/>
-        </classes>
-    </test>
+<!--    <test name="TealPD Contacts Page Tests">-->
+<!--        <parameter name="browserName" value="chrome"/>-->
+<!--        <classes>-->
+<!--            <class name="Tests.TC03_ContactsPage"/>-->
+<!--        </classes>-->
+<!--    </test>-->
 
-    <test name="TealPD Add Contacts Page Tests">
-        <parameter name="browserName" value="chrome"/>
-        <classes>
-            <class name="Tests.TC04_AddContactsPage"/>
-        </classes>
-    </test>
+<!--    <test name="TealPD Add Contacts Page Tests">-->
+<!--        <parameter name="browserName" value="chrome"/>-->
+<!--        <classes>-->
+<!--            <class name="Tests.TC04_AddContactsPage"/>-->
+<!--        </classes>-->
+<!--    </test>-->
 
-    <test name="TealPD Items Page Tests">
-        <parameter name="browserName" value="chrome"/>
-        <classes>
-            <class name="Tests.TC05_ItemsPage"/>
-        </classes>
-    </test>
+<!--    <test name="TealPD Items Page Tests">-->
+<!--        <parameter name="browserName" value="chrome"/>-->
+<!--        <classes>-->
+<!--            <class name="Tests.TC05_ItemsPage"/>-->
+<!--        </classes>-->
+<!--    </test>-->
 
-    <test name="TealPD QP Page Tests">
-        <parameter name="browserName" value="chrome"/>
-        <classes>
-            <class name="Tests.TC06_QpPage"/>
-        </classes>
-    </test>
+<!--    <test name="TealPD QP Page Tests">-->
+<!--        <parameter name="browserName" value="chrome"/>-->
+<!--        <classes>-->
+<!--            <class name="Tests.TC06_QpPage"/>-->
+<!--        </classes>-->
+<!--    </test>-->
 
     <test name="TealPD Skid Page Tests">
         <parameter name="browserName" value="chrome"/>

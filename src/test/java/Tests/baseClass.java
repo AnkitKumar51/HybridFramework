@@ -56,7 +56,7 @@ public class baseClass {
 
     @AfterClass
     public void tearDown() {
-        driver.quit();
+//        driver.quit();
     }
 
     @DataProvider(name = "WebsiteLoginData")
@@ -118,5 +118,4 @@ public class baseClass {
         }
         return data;
     }
-
 }
