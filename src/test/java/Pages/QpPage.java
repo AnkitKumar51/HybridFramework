@@ -83,7 +83,8 @@ public class QpPage {
         select.selectByVisibleText("Component");
 
         Select sel = new Select(selectItem);
-        sel.selectByVisibleText(" 1/2\" Red & White Balancing Valve Lead Free PN 9517AB");
+        sel.selectByValue("2610");
+//        sel.selectByVisibleText(" 1/2\" Red & White Balancing Valve Lead Free PN 9517AB");
         ExtentLogger.pass(driver.getCurrentUrl());
     }
 
