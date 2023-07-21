@@ -1,5 +1,6 @@
 package Pages;
 
+import Configuration.ExtentLogger;
 import org.openqa.selenium.*;
 import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.FindBy;
@@ -83,6 +84,7 @@ public class QpPage {
 
         Select sel = new Select(selectItem);
         sel.selectByVisibleText(" 1/2\" Red & White Balancing Valve Lead Free PN 9517AB");
+        ExtentLogger.pass(driver.getCurrentUrl());
     }
 
     public void submitQP() {

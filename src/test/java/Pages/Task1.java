@@ -1,5 +1,6 @@
 package Pages;
 
+import Configuration.ExtentLogger;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
@@ -14,6 +15,7 @@ import java.util.ArrayList;
 import java.util.Iterator;
 import java.util.List;
 import java.util.Set;
+import java.util.concurrent.TimeUnit;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
@@ -45,7 +47,6 @@ public class Task1 {
         username.sendKeys(userName);
         password.sendKeys(passWord);
         login.click();
-
     }
 
     public void listTask() {
@@ -56,7 +57,9 @@ public class Task1 {
                 // Navigate to the URL with the current ID
                 String baseUrl = "http://192.168.1.16/secure/items/skidsmanage.aspx?skid=";
                 driver.navigate().to(baseUrl + id);
+                driver.manage().timeouts().pageLoadTimeout(30, TimeUnit.SECONDS);
                 System.out.println("Now actions are Performing on this " + driver.getCurrentUrl());
+                ExtentLogger.pass(driver.getCurrentUrl());
                 tableOperations();
                 // You can add more actions here based on your specific requirements
             }
@@ -82,7 +85,6 @@ public class Task1 {
             }
             tableData.add(rowData);
         }
-
         // Assuming the tableData now contains the values for each row and column.
 
         // Now, let's perform the multiplication and verification.
@@ -104,6 +106,7 @@ public class Task1 {
             if (Math.abs(expectedTotalCost - totalCostDouble) < 0.0001) {
                 if (itemLinkText.contains("Assembly") && !itemLinkText.contains("Assemble")) {
                     System.out.println("No operation needed for row: " + itemLinkText);
+                    ExtentLogger.pass("No operation needed for row: " + itemLinkText);
                 } else {
                     // If "itemLinkText" does not contain "ASSEMBLY" text, click on the link.
                     WebElement itemLink = driver.findElement(By.linkText(itemLinkText));
@@ -113,26 +116,21 @@ public class Task1 {
                     } catch (InterruptedException e) {
                         throw new RuntimeException(e);
                     }
-
                     // Handle the child window.
                     switchToChildWindow();
-
                     String pageTitle = driver.getTitle();
-
                     // Check if the page title contains "ASSEMBLY."
                     if (pageTitle.contains("ASSEMBLY")) {
                         System.out.println("No operation needed for action because it contains ASSEMBLY Item: " + pageTitle);
+                        ExtentLogger.pass("No operation needed for action because it contains ASSEMBLY Item: " + pageTitle);
                     } else {
-
                         // Verify the List Price in the child window.
                         verifyListPrice(unitCostDouble);
                     }
                     // Close the child window.
-
                     driver.close();
                 }
                 // Switch back to the parent window.
-
                 switchToParentWindow();
             }
         }
@@ -146,7 +144,6 @@ public class Task1 {
         }
         return 0.0; // Return a default value or handle error cases based on your requirement
     }
-
 
     // Method to switch to the child window.
     private void switchToChildWindow() {
@@ -192,10 +189,13 @@ public class Task1 {
                 double listPrice = Double.parseDouble(numericText);
                 try {
                     Assert.assertEquals(listPrice, expectedListPrice);
+                    ExtentLogger.pass("Assertion Passed at row: " + rowIndex);
                     System.out.println("Unit Cost Value " + expectedListPrice + "  List Price Value " + listPrice);
+                    ExtentLogger.pass("Unit Cost Value " + expectedListPrice + "  List Price Value " + listPrice);
                 } catch (AssertionError e) {
                     // Handle the assertion failure. You can print a message or log it.
                     System.out.println("Assertion failed for row: " + rowIndex);
+                    ExtentLogger.pass("Assertion failed for row: " + rowIndex);
                 }
             }
         }
