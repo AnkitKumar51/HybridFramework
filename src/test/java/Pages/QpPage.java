@@ -23,7 +23,7 @@ public class QpPage {
     @FindBy(xpath = "//input[@id='ContentPlaceHolder1_TextBoxJobName']")
     private WebElement QpName;
 
-    @FindBy(xpath = "//textarea[@id='ContentPlaceHolder1_TextBoxJobInstructions']")
+    @FindBy(xpath = "//*[@id=\"tinymce\"]")
     private WebElement QpInstructions;
 
     @FindBy(xpath = "//select[@id='ContentPlaceHolder1_ddlProjects']")
@@ -73,8 +73,9 @@ public class QpPage {
     public void addQPData(String qpName, String qpInstructions) {
         buildNewQP.click();
         QpName.sendKeys(qpName);
-
+        driver.switchTo().frame("ContentPlaceHolder1_TextBoxJobInstructions_ifr");
         QpInstructions.sendKeys(qpInstructions);
+        driver.switchTo().defaultContent();
 
         Select se = new Select(QpSite);
         se.selectByVisibleText(" Whistler (aka 859 Spring)");
