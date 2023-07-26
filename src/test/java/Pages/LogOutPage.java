@@ -23,7 +23,5 @@ public class LogOutPage {
     public void LogOut() {
         logoutDropDownMenu.click();
         logout.click();
-        ExtentLogger.pass("Successfully Logged Out");
-        ExtentLogger.pass(driver.getCurrentUrl());
     }
 }

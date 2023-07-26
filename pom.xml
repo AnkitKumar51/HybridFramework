@@ -78,13 +78,6 @@
             <version>2.9.0</version>
         </dependency>
 
-<!--        &lt;!&ndash; https://mvnrepository.com/artifact/javax.xml/jaxb-impl &ndash;&gt;-->
-<!--        <dependency>-->
-<!--            <groupId>javax.xml</groupId>-->
-<!--            <artifactId>jaxb-impl</artifactId>-->
-<!--            <version>2.1</version>-->
-<!--        </dependency>-->
-
         <dependency>
             <groupId>codes.rafael.jaxb-xew-plugin</groupId>
             <artifactId>jaxb-xew-plugin</artifactId>
@@ -106,6 +99,13 @@
             <artifactId>jaxb-xew-plugin</artifactId>
             <version>2.1</version>
         </dependency>
+
+        <dependency>
+            <groupId>com.relevantcodes</groupId>
+            <artifactId>extentreports</artifactId>
+            <version>2.41.2</version>
+        </dependency>
+
     </dependencies>
 
 </project>

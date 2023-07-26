@@ -59,7 +59,7 @@ public class Task1 {
                 driver.navigate().to(baseUrl + id);
                 driver.manage().timeouts().pageLoadTimeout(30, TimeUnit.SECONDS);
                 System.out.println("Now actions are Performing on this " + driver.getCurrentUrl());
-                ExtentLogger.pass(driver.getCurrentUrl());
+//                ExtentLogger.pass(driver.getCurrentUrl());
                 tableOperations();
                 // You can add more actions here based on your specific requirements
             }
@@ -106,7 +106,7 @@ public class Task1 {
             if (Math.abs(expectedTotalCost - totalCostDouble) < 0.0001) {
                 if (itemLinkText.contains("Assembly") && !itemLinkText.contains("Assemble")) {
                     System.out.println("No operation needed for row: " + itemLinkText);
-                    ExtentLogger.pass("No operation needed for row: " + itemLinkText);
+//                    ExtentLogger.pass("No operation needed for row: " + itemLinkText);
                 } else {
                     // If "itemLinkText" does not contain "ASSEMBLY" text, click on the link.
                     WebElement itemLink = driver.findElement(By.linkText(itemLinkText));
@@ -122,7 +122,7 @@ public class Task1 {
                     // Check if the page title contains "ASSEMBLY."
                     if (pageTitle.contains("ASSEMBLY")) {
                         System.out.println("No operation needed for action because it contains ASSEMBLY Item: " + pageTitle);
-                        ExtentLogger.pass("No operation needed for action because it contains ASSEMBLY Item: " + pageTitle);
+//                        ExtentLogger.pass("No operation needed for action because it contains ASSEMBLY Item: " + pageTitle);
                     } else {
                         // Verify the List Price in the child window.
                         verifyListPrice(unitCostDouble);
@@ -189,13 +189,13 @@ public class Task1 {
                 double listPrice = Double.parseDouble(numericText);
                 try {
                     Assert.assertEquals(listPrice, expectedListPrice);
-                    ExtentLogger.pass("Assertion Passed at row: " + rowIndex);
+//                    ExtentLogger.pass("Assertion Passed at row: " + rowIndex);
                     System.out.println("Unit Cost Value " + expectedListPrice + "  List Price Value " + listPrice);
-                    ExtentLogger.pass("Unit Cost Value " + expectedListPrice + "  List Price Value " + listPrice);
+//                    ExtentLogger.pass("Unit Cost Value " + expectedListPrice + "  List Price Value " + listPrice);
                 } catch (AssertionError e) {
                     // Handle the assertion failure. You can print a message or log it.
                     System.out.println("Assertion failed for row: " + rowIndex);
-                    ExtentLogger.pass("Assertion failed for row: " + rowIndex);
+//                    ExtentLogger.pass("Assertion failed for row: " + rowIndex);
                 }
             }
         }

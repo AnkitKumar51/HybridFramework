@@ -2,6 +2,7 @@
 <suite name="All Tests Suite" parallel="tests" thread-count="1">
     <listeners>
         <listener class-name="Configuration.Listeners"/>
+        <listener class-name="Configuration.ExtentReportListener"/>
     </listeners>
 
     <test name="TealPD Login Logout Tests">
@@ -47,7 +48,7 @@
     </test>
 
     <test name="TealPD Skid Page Tests">
-        <parameter name="browserName" value="headlessChrome"/>
+        <parameter name="browserName" value="chrome"/>
         <classes>
             <class name="Tests.TC07_Task1"/>
         </classes>

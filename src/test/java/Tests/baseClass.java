@@ -118,4 +118,8 @@ public class baseClass {
         }
         return data;
     }
+
+    public static WebDriver getDriver() {
+        return driver;
+    }
 }

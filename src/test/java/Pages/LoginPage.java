@@ -26,9 +26,7 @@ public class LoginPage {
 
     public void Login(String url, String userName, String passWord) {
         driver.get(url);
-        ExtentLogger.pass("Website url :" + url);
         username.sendKeys(userName);
-        ExtentLogger.pass("Website UserName :" + userName);
         password.sendKeys(passWord);
         login.click();
         String pageTitle = driver.getTitle();
