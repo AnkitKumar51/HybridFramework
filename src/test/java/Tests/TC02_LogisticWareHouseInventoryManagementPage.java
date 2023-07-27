@@ -4,7 +4,7 @@ import org.testng.annotations.Test;
 
 public class TC02_LogisticWareHouseInventoryManagementPage extends baseClass {
     @Test(dataProvider = "WebsiteLoginData")
-    public void manageWareHouse(String url, String userName, String passWord){
+    public void ManageWareHouse(String url, String userName, String passWord){
         pageFactory.getLoginPage().Login(url, userName, passWord);
         pageFactory.getLogisticWareHouseInventoryManagementPage().goToLogisticSection();
         pageFactory.getLogisticWareHouseInventoryManagementPage().goToWhsManagementSection();

@@ -10,7 +10,7 @@ public class TC06_QpPage extends baseClass{
     }
 
     @Test(priority = 1,dataProvider = "QpPageData")
-    public void addQpData(String qpName, String qpInstructions){
+    public void QpSubPage(String qpName, String qpInstructions){
         pageFactory.getQpPage().addQPData(qpName,qpInstructions);
         pageFactory.getQpPage().submitQP();
         pageFactory.getQpPage().checkQpAddedOrNot(qpName);
