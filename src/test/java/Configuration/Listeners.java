@@ -59,6 +59,7 @@ public class Listeners extends baseClass implements ITestListener, ISuiteListene
             ExtentReport.test.fail(MarkupHelper.createLabel(String.valueOf(result.getThrowable()), ExtentColor.RED));
             try {
                 ExtentReport.test.fail(result.getMethod().getMethodName() + " is failed", MediaEntityBuilder.createScreenCaptureFromBase64String(getBase64Image()).build());
+                ExtentLogger.pass(webDriver.getCurrentUrl());
             } catch (IOException e) {
                 throw new RuntimeException(e);
             }
