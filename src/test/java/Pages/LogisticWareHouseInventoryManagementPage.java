@@ -7,6 +7,7 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
+import org.openqa.selenium.support.ui.Select;
 
 import java.util.Iterator;
 import java.util.Set;
@@ -74,8 +75,11 @@ public class LogisticWareHouseInventoryManagementPage {
 
     public void actionOnNewWindow() {
         addNumberInCMD.sendKeys("2");
-        dropDown.click();
-        selectFromDopDown.click();
+
+        Select select = new Select(dropDown);
+        select.selectByValue("8892");
+//        dropDown.click();0
+//        selectFromDopDown.click();
         JavascriptExecutor js = (JavascriptExecutor) driver;
         js.executeScript("window.scrollTo(0, 1200);");
         clickOnPush.click();
