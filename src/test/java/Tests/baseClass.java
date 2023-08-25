@@ -3,10 +3,12 @@ package Tests;
 import Pages.PageFactory;
 import ReadExcelData.ExcelDataConfig;
 import io.github.bonigarcia.wdm.WebDriverManager;
+import org.apache.commons.math3.geometry.spherical.twod.Edge;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
 import org.openqa.selenium.edge.EdgeDriver;
+import org.openqa.selenium.edge.EdgeOptions;
 import org.openqa.selenium.firefox.FirefoxDriver;
 import org.testng.annotations.AfterClass;
 import org.testng.annotations.BeforeClass;
@@ -42,6 +44,12 @@ public class baseClass {
             ChromeOptions options = new ChromeOptions();
             options.addArguments("headless");
             driver = new ChromeDriver(options);
+            driver.manage().window().maximize();
+            pageFactory = new PageFactory(driver);
+        } else if (browserName.equalsIgnoreCase("headlessEdge")) {
+            EdgeOptions options = new EdgeOptions();
+            options.addArguments("headless");
+            driver = new EdgeDriver(options);
             driver.manage().window().maximize();
             pageFactory = new PageFactory(driver);
         } else {

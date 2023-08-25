@@ -22,7 +22,7 @@ import java.util.regex.Pattern;
 public class Task1 {
 
     WebDriver driver;
-    String url = "http://192.168.1.16";
+    String url = "http://192.168.1.16:8025";
     String userName = "ankit";
     String passWord = "test123";
 
@@ -55,7 +55,7 @@ public class Task1 {
             String id;
             while ((id = br.readLine()) != null) {
                 // Navigate to the URL with the current ID
-                String baseUrl = "http://192.168.1.16/secure/items/skidsmanage.aspx?skid=";
+                String baseUrl = "http://192.168.1.16:8025/secure/items/skidsmanage.aspx?skid=";
                 driver.navigate().to(baseUrl + id);
                 driver.manage().timeouts().pageLoadTimeout(30, TimeUnit.SECONDS);
                 System.out.println("Now actions are Performing on this " + driver.getCurrentUrl());

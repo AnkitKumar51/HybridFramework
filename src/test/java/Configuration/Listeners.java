@@ -43,11 +43,7 @@ public class Listeners extends baseClass implements ITestListener, ISuiteListene
         Object Listeners = result.getInstance();
         WebDriver webDriver = getDrivers();
         if (webDriver != null) {
-            try {
-                ExtentReport.test.pass(result.getMethod().getMethodName() + " is passed", MediaEntityBuilder.createScreenCaptureFromBase64String(getBase64Image()).build());
-            } catch (IOException e) {
-                throw new RuntimeException(e);
-            }
+            ExtentReport.test.pass(result.getMethod().getMethodName() + " is passed", MediaEntityBuilder.createScreenCaptureFromBase64String(getBase64Image()).build());
         }
     }
 
@@ -57,12 +53,8 @@ public class Listeners extends baseClass implements ITestListener, ISuiteListene
         WebDriver webDriver = getDrivers();
         if (webDriver != null) {
             ExtentReport.test.fail(MarkupHelper.createLabel(String.valueOf(result.getThrowable()), ExtentColor.RED));
-            try {
-                ExtentReport.test.fail(result.getMethod().getMethodName() + " is failed", MediaEntityBuilder.createScreenCaptureFromBase64String(getBase64Image()).build());
-                ExtentLogger.pass(webDriver.getCurrentUrl());
-            } catch (IOException e) {
-                throw new RuntimeException(e);
-            }
+            ExtentReport.test.fail(result.getMethod().getMethodName() + " is failed", MediaEntityBuilder.createScreenCaptureFromBase64String(getBase64Image()).build());
+            ExtentLogger.pass(webDriver.getCurrentUrl());
         }
     }
 
