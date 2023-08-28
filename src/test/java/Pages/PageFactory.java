@@ -11,7 +11,7 @@ public class PageFactory {
     private AddContactsPage addContactsPage;
     private ItemsPage itemsPage;
     private QpPage qpPage;
-    private Task1 task1;
+    private SkidPage skidPage;
 
     public PageFactory(WebDriver driver) {
         this.driver = driver;
@@ -66,10 +66,10 @@ public class PageFactory {
         return qpPage;
     }
 
-    public Task1 getTask1(){
-        if(task1== null){
-            task1 = new Task1(driver);
+    public SkidPage getTask1(){
+        if(skidPage == null){
+            skidPage = new SkidPage(driver);
         }
-        return task1;
+        return skidPage;
     }
 }

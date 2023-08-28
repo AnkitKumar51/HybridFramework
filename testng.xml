@@ -50,7 +50,7 @@
     <test name="TealPD Skid Page Tests">
         <parameter name="browserName" value="edge"/>
         <classes>
-            <class name="Tests.TC07_Task1"/>
+            <class name="Tests.TC07_SkidPage"/>
         </classes>
     </test>
 </suite>

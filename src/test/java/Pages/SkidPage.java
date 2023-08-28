@@ -1,6 +1,5 @@
 package Pages;
 
-import Configuration.ExtentLogger;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
@@ -19,7 +18,7 @@ import java.util.concurrent.TimeUnit;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
-public class Task1 {
+public class SkidPage {
 
     WebDriver driver;
     String url = "http://192.168.1.16:8025";
@@ -37,7 +36,7 @@ public class Task1 {
 
     String skidTablePath = "//*[@id=\"FluidContent_up3\"]/table/tbody/tr";
 
-    public Task1(WebDriver driver) {
+    public SkidPage(WebDriver driver) {
         this.driver = driver;
         PageFactory.initElements(driver, this);
     }

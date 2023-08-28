@@ -36,7 +36,7 @@ public class AddContactsPage {
     @FindBy(xpath = "//input[@id='contentPlaceHolder_contactadd_BtnFullForm']")
     private WebElement submit;
 
-    @FindBy(xpath = "(//input[@name='ctl00$contentPlaceHolder$RadioButtonList1'])[1]")
+    @FindBy(xpath = "(//input[@name='ctl00$contentPlaceHolder$RadioButtonList1'])[2]")
     private WebElement specificStatus;
 
     @FindBy(xpath = "(//input[@id='contentPlaceHolder_chkProjects_0'])[1]")

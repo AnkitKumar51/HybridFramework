@@ -77,7 +77,7 @@ public class LogisticWareHouseInventoryManagementPage {
         addNumberInCMD.sendKeys("2");
 
         Select select = new Select(dropDown);
-        select.selectByValue("8892");
+        select.selectByValue("9128");
 //        dropDown.click();0
 //        selectFromDopDown.click();
         JavascriptExecutor js = (JavascriptExecutor) driver;

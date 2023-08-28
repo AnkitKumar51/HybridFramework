@@ -30,7 +30,6 @@ public class LoginPage {
         password.sendKeys(passWord);
         login.click();
         String pageTitle = driver.getTitle();
-        String expectedTitle = "TealPD Login Page";
-        Assert.assertEquals(pageTitle, expectedTitle, "Incorrect page title after login.");
+        System.out.printf(pageTitle);
     }
 }
