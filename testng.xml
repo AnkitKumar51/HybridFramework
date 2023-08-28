@@ -6,7 +6,7 @@
     </listeners>
 
     <test name="TealPD Login Logout Tests">
-        <parameter name="browserName" value="headlessEdge"/>
+        <parameter name="browserName" value="headlessChrome"/>
         <classes>
             <class name="Tests.TC01_LoginPage"/>
         </classes>
@@ -53,4 +53,5 @@
             <class name="Tests.TC07_SkidPage"/>
         </classes>
     </test>
+
 </suite>
