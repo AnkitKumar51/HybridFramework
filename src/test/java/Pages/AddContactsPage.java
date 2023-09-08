@@ -9,9 +9,7 @@ import org.openqa.selenium.support.ui.Select;
 import java.util.concurrent.TimeUnit;
 
 public class AddContactsPage {
-
     WebDriver driver;
-
     @FindBy(xpath = "(//a[contains(text(),'Add A Contact')])[1]")
     private WebElement goToAddContactSection;
 
