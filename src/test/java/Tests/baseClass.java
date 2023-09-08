@@ -3,7 +3,7 @@ package Tests;
 import Pages.PageFactory;
 import ReadExcelData.ExcelDataConfig;
 import io.github.bonigarcia.wdm.WebDriverManager;
-import org.apache.commons.math3.geometry.spherical.twod.Edge;
+import io.github.bonigarcia.wdm.managers.OperaDriverManager;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
