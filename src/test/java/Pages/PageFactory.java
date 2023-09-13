@@ -66,7 +66,7 @@ public class PageFactory {
         return qpPage;
     }
 
-    public SkidPage getTask1(){
+    public SkidPage getSkidPage(){
         if(skidPage == null){
             skidPage = new SkidPage(driver);
         }
