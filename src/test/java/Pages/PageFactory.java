@@ -13,6 +13,10 @@ public class PageFactory {
     private QpPage qpPage;
     private SkidPage skidPage;
 
+    private ComparisonBetweenInventoryPages comparisonBetweenInventoryPages;
+
+    private Comparison_Between_Push_Inventory_AND_WareHouse_Inventory_Page comparison_between_push_inventory_and_wareHouse_inventory_page;
+
     public PageFactory(WebDriver driver) {
         this.driver = driver;
     }
@@ -72,4 +76,21 @@ public class PageFactory {
         }
         return skidPage;
     }
+
+    public Comparison_Between_Push_Inventory_AND_WareHouse_Inventory_Page getComparison_between_push_inventory_and_wareHouse_inventory_page(){
+        if(comparison_between_push_inventory_and_wareHouse_inventory_page == null){
+            comparison_between_push_inventory_and_wareHouse_inventory_page = new Comparison_Between_Push_Inventory_AND_WareHouse_Inventory_Page(driver);
+        }
+        return comparison_between_push_inventory_and_wareHouse_inventory_page;
+    }
+
+    /*
+
+    public ComparisonBetweenInventoryPages getComparisonBetweenInventoryPages(){
+        if(comparisonBetweenInventoryPages == null){
+            comparisonBetweenInventoryPages = new ComparisonBetweenInventoryPages(driver);
+        }
+        return comparisonBetweenInventoryPages;
+    }
+     */
 }
